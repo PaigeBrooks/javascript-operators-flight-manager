@@ -26,10 +26,10 @@ function Flights() {
         if (totalDistance <= distanceLimit/2){
             return "The revision needs to be done within the next 3 months";
         }
-        if ((totalDistance > (distanceLimit/2)) || (totalDistance <= (distanceLimit*0.75))){
+        else if (totalDistance <= distanceLimit*0.75){
             return "The revision needs to be done within the next 2 months";
         }
-        if ((totalDistance > (distanceLimit*0.75)) || (totalDistance <= distanceLimit)){
+        else {
             return "The revision needs to be done within the next month";
         }
     }
