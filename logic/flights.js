@@ -8,4 +8,3 @@ function Flights() {
         }
         return flights;
     }
-module.exports = Flights();
