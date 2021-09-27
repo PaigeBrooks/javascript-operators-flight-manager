@@ -1,11 +1,12 @@
 function Flights() {
 function calculateNumberOfFlights(passengers, capacity){
+    let flights;
     if (passengers%capacity==0){
-        return passengers/capacity
+        flights = passengers/capacity;
     } else {
-        return passengers/capacity + 1
+        flights = passengers/capacity + 1;
     }
 }
-return {calculateNumberOfFlights};
+return flights;
 }
 module.exports = Flights();
