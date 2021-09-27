@@ -1,5 +1,5 @@
 function Flights() {
-    calculateNumberOfFlights(passengers, capacity){
-        
+    function calculateNumberOfFlights(passengers, capacity){
+
     }
 }
