@@ -1,5 +1,5 @@
 function Passengers() {
-    function checkFlightCapacity(flightCapacity, passengersArray){
+    function checkFlightCapacity(flightCapacity, passengerArray){
         let passengerNumber = 0;
         let passengers;
         for (passengers of passengerArray){
