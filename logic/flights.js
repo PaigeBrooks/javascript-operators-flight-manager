@@ -17,6 +17,6 @@ function Flights() {
     function checkAircraftRevision(distanceLimit, distancesArray){
 
     }
-    return {calculateNumberOfFlights};
+    return {calculateNumberOfFlights, checkAircraftRevision};
 }
 module.exports = Flights();
