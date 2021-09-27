@@ -5,7 +5,7 @@ function calculateNumberOfFlights(passengers, capacity){
     } else {
         return passengers/capacity + 1
     }
-
 }
+return {calculateNumberOfFlights};
 }
-
+module.exports = Flights();
