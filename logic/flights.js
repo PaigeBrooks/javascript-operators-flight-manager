@@ -21,16 +21,16 @@ function Flights() {
             totalDistance += distance;
         }
         if (totalDistance > distanceLimit){
-            throw new Error("Flight maximum allowed distance (" + distanceLimit + ") exceeded. No flight is allowed any longer, you need to make the revision immediately.")
+            throw new Error("Flight maximum allowed distance (" + distanceLimit + ") exceeded. No flight is allowed any longer, you need to make the revision immediately.");
         }
-        if (totalDistance <= (distanceLimit/2)){
-            return "The revision needs to be done within the next 3 months"
+        if (totalDistance <= distanceLimit/2){
+            return "The revision needs to be done within the next 3 months";
         }
         if ((totalDistance > (distanceLimit/2)) || (totalDistance <= (distanceLimit*0.75))){
-            return "The revision needs to be done within the next 2 months"
+            return "The revision needs to be done within the next 2 months";
         }
         if ((totalDistance > (distanceLimit*0.75)) || (totalDistance <= distanceLimit)){
-            return "The revision needs to be done within the next month"
+            return "The revision needs to be done within the next month";
         }
     }
     return {calculateNumberOfFlights, checkAircraftRevision};
