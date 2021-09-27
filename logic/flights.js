@@ -4,7 +4,7 @@ function Flights() {
             throw new Error("The number of passengers must be a positive integer value");
         }
         if (capacity<0){
-            throw new Error("The capacity of the flight must be a positive integer value")
+            throw new Error("The capacity of the flight must be a positive integer value");
         }
         
         if(passengers%capacity==0) {
