@@ -12,10 +12,11 @@ function Flights() {
         } else {
             return Math.floor(passengers/capacity)+1;
         }
-        
+    }
+    
+    function checkAircraftRevision(distanceLimit, distancesArray){
+
     }
     return {calculateNumberOfFlights};
-
-    
 }
 module.exports = Flights();
