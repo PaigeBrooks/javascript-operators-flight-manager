@@ -26,14 +26,14 @@ function Util() {
          }
     function calculateTotalDistance(distancesArray){
         let totalDistance = 0;
-        for (distance in distancesArray){
+        let distance;
+        for (distance of distancesArray){
             if (distance < 0){
                 continue;
             }
-            if (distance >=0){
-                totalDistance += distance
-            }
+            totalDistance += distance 
         }
+        return totalDistance;
     }
          
 
