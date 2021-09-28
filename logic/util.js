@@ -17,8 +17,14 @@ function Util() {
         }
         return totalNumberOfPassengers;
      }
+     function checkInput(input){
+         if (input = NaN || input=false){
+             throw new Error("input a number")
+         }
+         
+     }
 
-     return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers};
+     return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers, checkInput};
 
 }
 
