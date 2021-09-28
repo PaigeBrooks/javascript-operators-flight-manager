@@ -10,11 +10,11 @@ function calculateTotalDistributedPassengers(distributedPassengers){
     return totalDistributedPassengers;
 }
 
-function calculateTotalNumberOfPassengers(passengerArray){
-    let calculateTotalNumberOfPassengers = 0;
+function calculateTotalNumberOfPassengers(passengersArray){
+    let totalNumberOfPassengers = 0;
     let passengers;
 
-    for (passengers of passengerArray){
+    for (passengers of passengersArray){
         totalNumberOfPassengers += passengers;
     }
     return totalNumberOfPassengers;
