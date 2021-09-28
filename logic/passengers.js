@@ -1,3 +1,4 @@
+"use strict"
 function Passengers() {
 
     function checkFlightCapacity(flightCapacity, passengersArray) {

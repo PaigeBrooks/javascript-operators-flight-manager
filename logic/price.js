@@ -1,3 +1,4 @@
+"use strict"
 function Prices() {
 function calculateFinalPrice(basePrice, percentPassengerType, percentFlightType){
     let finalPrice = basePrice;
