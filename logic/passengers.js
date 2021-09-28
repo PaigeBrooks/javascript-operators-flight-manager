@@ -1,18 +1,22 @@
 function Passengers() {
-    function checkFlightCapacity(flightCapacity, passengerArray){
-        let passengerNumber = 0;
+
+    function checkFlightCapacity(flightCapacity, passengersArray) {
+        let passengersNumber = 0;
         let passengers;
-        for (passengers of passengerArray){
-            passengerNumber += passengers;
+        for(passengers of passengersArray) {
+            passengersNumber += passengers;
         }
-        if (passengerNumber>flightCapacity){
+        if (passengersNumber > flightCapacity) {
             throw new Error("Flight capacity (" + flightCapacity + ") exceeded. You have " + passengersNumber + " passengers.");
-        }else{
-            return passengerNumber;
         }
-    }
-    function distributeAllSeatsToAllPassengers(vipPassengers, regularPassengers, nrOfFlights, businessSeatsPerFlight, economySeatsPerFlight){
-        let vipPassengersWithBusinessSeats=0, vipPassengersWithEconomySeats=0, regularPassengersWithBusinessSeats=0, regularPassengersWithEconomySeats=0;
+        return passengersNumber;
+     }
+
+     function distributeAllSeatsToAllPassengers(vipPassengers, regularPassengers, nrOfFlights, 
+        businessSeatsPerFlight, economySeatsPerFlight) {
+
+        let vipPassengersWithBusinessSeats=0, vipPassengersWithEconomySeats=0, 
+        regularPassengersWithBusinessSeats=0, regularPassengersWithEconomySeats=0;
         let availableBusinessSeats = nrOfFlights * businessSeatsPerFlight;
         let availableEconomySeats = nrOfFlights * economySeatsPerFlight;
 
@@ -29,37 +33,39 @@ function Passengers() {
         regularPassengersWithEconomySeats = updateConfiguration(regularEconomyConfiguration, economySeatsPerFlight);
 
         return {vipPassengersWithBusinessSeats:vipPassengersWithBusinessSeats,
-                vipPassengersWithEconomySeats:vipPassengersWithEconomySeats,
-                regularPassengersWithBusinessSeats:regularPassengersWithBusinessSeats,
+                vipPassengersWithEconomySeats:vipPassengersWithEconomySeats, regularPassengersWithBusinessSeats:regularPassengersWithBusinessSeats,
                 regularPassengersWithEconomySeats:regularPassengersWithEconomySeats};
     }
+
     function updateConfiguration(configuration, seatsPerFlight) {
         let passengersWithSeats = 0;
+        while (configuration.passengers > 0) {
+            if (configuration.seats > 0) {
+               if (configuration.passengers >= configuration.seats) {
 
-        while (configuration.passengers > 0){
-            if (configuration.seats >0){
-                if (configuration.passengers >= configuration.seats){
-                    if (configuration.seats > configuration.seatsPerFlight){
+                    if (configuration.seats > configuration.seatsPerFlight) {
                         configuration.passengers -= seatsPerFlight;
                         configuration.seats -= seatsPerFlight;
                         passengersWithSeats += seatsPerFlight;
-                    } else{
+                    } else {
                         configuration.passengers -= configuration.seats;
                         passengersWithSeats += configuration.seats;
-                        configuration.seats =0;
+                        configuration.seats = 0;
                     }
-                }else{
+               } else {
                     passengersWithSeats += configuration.passengers;
                     configuration.seats -= configuration.passengers;
-                    configuration.passengers =0;
-                }
-            }else{
-                break;
+                    configuration.passengers = 0;
+               }
+            } else {
+               break;
             }
-            return passengersWithSeats;
         }
+        return passengersWithSeats;
     }
-    
-    return {checkFlightCapacity, distributeAllSeatsToAllPassengers};
+
+     return {checkFlightCapacity, distributeAllSeatsToAllPassengers};
+
 }
+
 module.exports = Passengers();
