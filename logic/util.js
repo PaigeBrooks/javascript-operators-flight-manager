@@ -24,7 +24,7 @@ function Util() {
          if (isNaN(input)){
              throw new Error("Incorrect values. Checl all input fields to be numbers.")
          }
-         }
+         
          
      }
 
