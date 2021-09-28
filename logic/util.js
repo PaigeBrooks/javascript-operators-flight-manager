@@ -18,8 +18,12 @@ function Util() {
         return totalNumberOfPassengers;
      }
      function checkInput(input){
-         if (input = NaN || input=false){
-             throw new Error("input a number")
+         if (!input){
+             throw new Error("Incorrect values. Check all input fields to be filled in.")
+         }
+         if (isNaN(input)){
+             throw new Error("Incorrect values. Checl all input fields to be numbers.")
+         }
          }
          
      }
