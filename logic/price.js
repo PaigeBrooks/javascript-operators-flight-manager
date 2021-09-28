@@ -22,7 +22,7 @@ function calculateDefaultFinalPrice(basePrice, passengerType, flightType){
         case 'BUSINESS': finalPrice *= 1.1;
         break;
     }
-    return finalPrice.Price.toFixed(2);
+    return finalPrice.toFixed(2);
 }
 function calculateTotalFinalPrice(seats, passengerType, flightType, basePrice){
     return seats * calculateDefaultFinalPrice(basePrice, passengerType, flightType);
