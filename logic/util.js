@@ -24,11 +24,20 @@ function Util() {
          if (isNaN(input)){
              throw new Error("Incorrect values. Checl all input fields to be numbers.")
          }
+    function calculateTotalDistance(distancesArray){
+        let totalDistance = 0;
+        for (distance in distancesArray){
+            if (distance < 0){
+                continue;
+            }
+            if (distance >=0){
+                totalDistance += distance
+            }
+        }
+    }
          
-         
-     }
 
-     return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers, checkInput};
+     return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers, checkInput, calculateTotalDistance};
 
 }
 
